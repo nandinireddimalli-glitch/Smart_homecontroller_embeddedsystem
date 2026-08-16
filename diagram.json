@@ -1,0 +1,305 @@
+{
+  "version": 1,
+  "author": "Nandini",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": -140,
+      "left": -300,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -140,
+      "left": 250,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 180,
+      "left": -300,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": 300,
+      "left": 180,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 80,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "lightLed",
+      "top": -50,
+      "left": 500,
+      "attrs": {
+        "color": "white"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "fanLed",
+      "top": 10,
+      "left": 500,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "redLed",
+      "top": 140,
+      "left": 500,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "greenLed",
+      "top": 200,
+      "left": 500,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "securityButton",
+      "top": 400,
+      "left": -300,
+      "attrs": {
+        "color": "red",
+        "label": "SECURITY"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "lightButton",
+      "top": 450,
+      "left": -300,
+      "attrs": {
+        "color": "white",
+        "label": "LIGHT"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "fanButton",
+      "top": 500,
+      "left": -300,
+      "attrs": {
+        "color": "blue",
+        "label": "FAN"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pir:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "pir:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pir:OUT",
+      "uno:2",
+      "green",
+      []
+    ],
+
+    [
+      "dht:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "dht:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "dht:SDA",
+      "uno:3",
+      "green",
+      []
+    ],
+
+    [
+      "ldr:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "ldr:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "ldr:AO",
+      "uno:A0",
+      "green",
+      []
+    ],
+
+    [
+      "lcd:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "lcd:GND",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "lcd:SDA",
+      "uno:A4",
+      "green",
+      []
+    ],
+    [
+      "lcd:SCL",
+      "uno:A5",
+      "green",
+      []
+    ],
+
+    [
+      "lightLed:A",
+      "uno:8",
+      "green",
+      []
+    ],
+    [
+      "lightLed:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "fanLed:A",
+      "uno:9",
+      "green",
+      []
+    ],
+    [
+      "fanLed:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "buzzer:1",
+      "uno:10",
+      "green",
+      []
+    ],
+    [
+      "buzzer:2",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "redLed:A",
+      "uno:11",
+      "green",
+      []
+    ],
+    [
+      "redLed:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "greenLed:A",
+      "uno:12",
+      "green",
+      []
+    ],
+    [
+      "greenLed:C",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "securityButton:1.l",
+      "uno:4",
+      "green",
+      []
+    ],
+    [
+      "securityButton:2.r",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "lightButton:1.l",
+      "uno:5",
+      "green",
+      []
+    ],
+    [
+      "lightButton:2.r",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+
+    [
+      "fanButton:1.l",
+      "uno:6",
+      "green",
+      []
+    ],
+    [
+      "fanButton:2.r",
+      "uno:GND.2",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
